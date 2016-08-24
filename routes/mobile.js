@@ -28,14 +28,15 @@ router.use(function(req,res,next){
   } else {
     console.log('invalid session');
     // console.log(next);
-    next(res.sendStatus(403).send('Forbidden'));
+    // next(res.sendStatus(403).send('Forbidden'));
+    res.redirect('/login?state=mobile');
   }
 });
 
 /* GET Secure resource */
 router.get('/', function(req, res, next) {
   console.log('Accessing the secure section ...'+path.join(__dirname + '/secure.html'))
-  res.sendFile(path.join(__dirname + '/../public/index.html'));
+  res.sendFile(path.join(__dirname + '/../public/mobile.html'));
 });
 
 router.get('/token_data', function(req, res, next) {
@@ -46,7 +47,7 @@ router.get('/token_data', function(req, res, next) {
 
 /* GET Secure resource for data */
 router.get('/data', function(req, res, next) {
-  console.log('Accessing the secure section ...'+path.join(__dirname + '/index.html'));
+  console.log('Accessing the secure section ...'+path.join(__dirname + '/moblie.html'));
   res.json(req.app.get('connectedDeviceConfig'));
 });
 

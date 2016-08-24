@@ -4,8 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var secure = require('./routes/secure');
+// var index = require('./routes/index');
+// var secure = require('./routes/secure');
+var mobile = require('./routes/mobile');
 var auth = require('./routes/auth.js');
 var session = require('express-session');
 var expressProxy = require('express-http-proxy');
@@ -52,7 +53,6 @@ if(node_env == 'development') {
 	base64ClientCredential  = devConfig.base64ClientCredential;
 	applicationUrl = devConfig.appUrl;
 	windServiceUrl = devConfig.windServiceUrl;
-
 	// Connected Device env variables
 	assetTagname = devConfig.tagname;
 	assetURL = devConfig.assetURL;
@@ -102,7 +102,7 @@ if(node_env == 'development') {
 		var uaaConfig = {
 			clientId: clientId,
 			serverUrl : uaaUri,
-	    defaultClientRoute : '/index.html',
+	    defaultClientRoute : '/mobile.html',
 	    base64ClientCredential: base64ClientCredential,
 			callbackUrl: applicationUrl+'/callback',
 			appUrl: applicationUrl
@@ -209,8 +209,10 @@ app.get('/removeSession', function (req, res ,next) {
 });
 
 //Setting routes
-app.use('/', index);
-app.use('/secure', secure);
+// app.use('/', index);
+// app.use('/', secure);
+app.use('/', mobile);
+app.use('/mobile', mobile);
 
 function getWindServiceUrl(req) {
 	console.log('WindService URL from configuration: '+windServiceUrl);
