@@ -19,7 +19,14 @@ angular.module('starter', [ 'ionic', 'ngAnimate', 'ui.rCalendar', 'ion-datetime-
 				controller : 'CalendarDemoCtrl'
 			}
 		}
-	}).state('tabs.about', {
+	})
+	.state('mevent', {
+      url: "/aevent",
+      
+          templateUrl: "templates/addEvent.html"
+    
+    })
+	.state('tabs.about', {
 		url : '/about',
 		views : {
 			'about-tab' : {
