@@ -26,6 +26,12 @@ angular.module('starter', [ 'ionic', 'ngAnimate', 'ui.rCalendar', 'ion-datetime-
           templateUrl: "templates/addEvent.html"
     
     })
+    .state('qrcode', {
+      url: "/qrcode",
+      
+          templateUrl: "templates/qrcode.html"
+    
+    })
 	.state('tabs.about', {
 		url : '/about',
 		views : {

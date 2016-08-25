@@ -60,9 +60,14 @@ body {
 </script>
 
     <script id="templates/about.html" type="text/ng-template">
-    <ion-view view-title="About">
-        <ion-content class="padding">
-            <h3>Create hybrid mobile apps with the web technologies you love.</h3>
+    <ion-view view-title="Reservations">
+        <ion-content>
+            <div class="list">
+                 <div class="item">
+                    @IonicFramework
+                </div>
+
+            </div>
         </ion-content>
     </ion-view>
 </script>
@@ -86,16 +91,16 @@ body {
      <ion-view title="New Reservation" >
 
 <ion-nav-buttons side="left" >
-  <a href="javascript:history.back(-1)"  class="button button-icon icon ion-chevron-left" nav-direction="back">Back</a>
+  <a href="javascript:history.back(-1)"  class="button button-icon icon ion-ios-arrow-left" nav-direction="back">Back</a>
 </ion-nav-buttons>
 
         <ion-content>
             <div class="list list-inset">
-              <label class="item item-input">
-                 <input type="text" placeholder="ASN">
+              <label class="item item-input" style="outline:none;">
+                 <input type="text" placeholder="ASN" >
               </label>
               <label class="item item-input">
-                 <input type="text" placeholder="Quantity/Pallet" type="number">
+                 <input type="text" placeholder="Quantity/Pallet">
               </label>
             </div>
             <div class="list">
@@ -112,11 +117,28 @@ body {
                  </div>
             </div>
             <div class="padding">
-               <button class="button button-block button-positive">Next</button>
+               <a href="#/qrcode"><button class="button button-block button-positive">Next</button></a>
             </div>
         </ion-content>
 
      </ion-view>
+</script>
+
+    <script id="templates/qrcode.html" type="text/ng-template">
+    <ion-view title="QRCode">
+        <ion-nav-buttons side="right" >
+            <a href="#/tab/home"  class="button button-icon " >Done</a>
+        </ion-nav-buttons>
+
+        <ion-content >
+ 
+                <img src="images/123.png" style=" position:absolute;left: 0;right: 0;margin:0 auto;top:50%;transform:translateY(-0%);">
+
+             <!--<div class="padding" style="float:left;">
+               <a href="#/tab/home"><button class="button button-block button-positive">Done</button></a>
+            </div>-->
+        </ion-content>
+    </ion-view>
 </script>
 
     <script src="js/ionic.bundle.min.js"></script>
