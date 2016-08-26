@@ -17,7 +17,7 @@ body {
 </head>
 
 <body ng-app="starter">
-    <ion-nav-bar class="bar-positive"> <ion-nav-back-button>
+    <ion-nav-bar class="bar-positive" > <ion-nav-back-button>
     </ion-nav-back-button> </ion-nav-bar>
 
     <ion-nav-view></ion-nav-view>
@@ -39,15 +39,15 @@ body {
 </script>
 
     <script id="templates/home.html" type="text/ng-template">
-    <ion-view view-title={{viewTitle}}>
+    <ion-view>
+        <ion-nav-buttons side="left"><button class="button button-clear">{{viewTitle}}</button></ion-nav-buttons>
         <ion-nav-buttons side="right">
-            <!--<button class="button" ion-datetime-picker ng-model="datetimeValue">Add</button>-->
             <a href="#/aevent"><button class="button" >Add</button></a>
             <button class="button" ng-disabled="isToday()" ng-click="today()">Today</button>
             <button class="button" ng-click="changeMode('month')">M</button>
             <button class="button" ng-click="changeMode('week')">W</button>
             <button class="button" ng-click="changeMode('day')">D</button>
-            <button class="button" ng-click="loadEvents()">Load Events</button>
+            <!--<button class="button" ng-click="loadEvents()">Load Events</button>-->
         </ion-nav-buttons>
 
         <ion-content scroll="false" class="main-content">
@@ -64,23 +64,58 @@ body {
         <ion-content>
             <div class="list">
                  <div class="item">
-                    @IonicFramework
-                </div>
+                    <p>ASN: 123456</p><br>
+                    <p>Appointment: 2016-8-26 10:30 -- 2016-8-26 12:30</p><br>
+                    <button class="button button-small button-light" style="background:#387EF5;color:white;">Update</button>
+                    <button class="button button-small button-light" style="background:red;color:white;">Delete</button>
+                 </div>
+                 
+                 <div class="item">
+                    <p>ASN: 123456</p><br>
+                    <p>Appointment: 2016-8-26 10:30 -- 2016-8-26 12:30</p><br>
+                    <button class="button button-small button-light" style="background:#387EF5;color:white;">Update</button>
+                    <!--<button class="button button-small button-light" style="background:red;color:white;">Delete</button>-->
+                 </div>
 
+                 <div class="item">
+                    <p>ASN: 123456</p><br>
+                    <p>Appointment: 2016-8-26 10:30 -- 2016-8-26 12:30</p><br>
+                    <button class="button button-small button-light" style="background:#CDCDCD;color:white;">Update</button>
+                    <!--<button class="button button-small button-light" style="background:red;color:white;">Delete</button>-->
+                 </div>
+
+                 <div class="item">
+                    <p>ASN: 123456</p><br>
+                    <p>Appointment: 2016-8-26 10:30 -- 2016-8-26 12:30</p><br>
+                    <button class="button button-small button-assertive" style="color:white;">Rate</button>
+                    <!--<button class="button button-small button-light" style="background:red;color:white;">Delete</button>-->
+                 </div>
             </div>
         </ion-content>
     </ion-view>
 </script>
 
     <script id="templates/contact.html" type="text/ng-template">
-    <ion-view title="Contact">
+    <ion-view title="Me">
         <ion-content>
             <div class="list">
                 <div class="item">
-                    @IonicFramework
+                    <img src="images/profile.png" style="width:70px;height:70px;float:left;">
+                    <div style="margin-left:100px;margin-top:25px;">
+                         <p style="font-size:25px;">Pactera</p>
+                    </div>
                 </div>
-                <div class="item">
-                    @DriftyTeam
+                
+                <div class="item item-divider"></div>
+
+                <div class="item item-icon-left item-icon-right">
+                    <i class="icon ion-ios-copy-outline"></i>
+                    Edit Information
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+
+                <div class="padding" style="margin-top:28px;">
+                 <button class="button button-block button-assertive">Log Out</button>
                 </div>
             </div>
         </ion-content>
@@ -90,9 +125,13 @@ body {
     <script id="templates/addEvent.html" type="text/ng-template">
      <ion-view title="New Reservation" >
 
-<ion-nav-buttons side="left" >
+<!--<ion-nav-buttons side="left" >
   <a href="javascript:history.back(-1)"  class="button button-icon icon ion-ios-arrow-left" nav-direction="back">Back</a>
-</ion-nav-buttons>
+</ion-nav-buttons>-->
+
+        <ion-nav-buttons side="left" >
+              <a href="#/tab/home"  class="button button-icon icon ion-ios-arrow-left" nav-direction="back">Back</a>
+        </ion-nav-buttons>
 
         <ion-content>
             <div class="list list-inset">
