@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 // var index = require('./routes/index');
 // var secure = require('./routes/secure');
 var mobile = require('./routes/mobile');
+var role = require('./routes/role');
 var auth = require('./routes/auth.js');
 var session = require('express-session');
 var expressProxy = require('express-http-proxy');
@@ -213,6 +214,7 @@ app.get('/removeSession', function (req, res ,next) {
 // app.use('/', secure);
 app.use('/', mobile);
 app.use('/mobile', mobile);
+app.use('/role', role);
 
 function getWindServiceUrl(req) {
 	console.log('WindService URL from configuration: '+windServiceUrl);

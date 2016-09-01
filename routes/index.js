@@ -24,6 +24,7 @@ router.use(function(req,res,next){
   console.log('check for token valid? ' +auth.hasValidSession(req) );
   if (auth.hasValidSession(req)) {
       console.log('valid session');
+      console.log('User:'+auth.user);
       next();
   } else {
     console.log('invalid session');

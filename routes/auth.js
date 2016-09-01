@@ -50,6 +50,7 @@ module.exports = {
             'token': res.access_token
           }
         }, function (error, response, body) {
+          // console.log(body);
           self.user = JSON.parse(body);
           successCallback(accessToken);
 	});
@@ -105,7 +106,8 @@ module.exports = {
   },
   hasValidSession: function (req) {
     var sess=req.session;
-    //console.log("Session token is "+sess.token);
+    // console.log("Session token is "+sess.token);
+    // console.log(sess);
     return !!sess.token;
   },
   getUserToken: function (req) {
